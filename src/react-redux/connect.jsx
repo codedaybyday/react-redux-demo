@@ -22,6 +22,7 @@ export default function(mapStateToProps, mapDispatchToProps) {
                 const {getState,dispatch} = store;
                 const stateProps = mapStateToProps? mapStateToProps(getState()) : {};
                 const dispatchProps = mapDispatchToProps? mapDispatchToProps(dispatch): {};
+                console.log(stateProps);
                 const state = {
                     ...this.state,
                     ...this.props,

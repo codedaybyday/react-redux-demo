@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './header';
 import Content from './content';
 import ToggleButton from './toggleButton';
+import TestReducer from './testReducer';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <Header />
         <Content />
         <ToggleButton />
+        <TestReducer />
       </div>
     );
   }

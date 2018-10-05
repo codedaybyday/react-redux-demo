@@ -6,12 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import reactRedux from './react-redux';
 import redux from './redux';
 import reducer from './reducer';
-const {createStore} = redux;
+import anotherReducer from './anotherReducer';
+const {createStore, combineReducers} = redux;
 const {Provider} = reactRedux;
-let store = createStore(reducer);
-store.subcribe(() => {
-
+const combinedReducers = combineReducers({
+    reducer,
+    anotherReducer
 });
+console.log(combinedReducers);
+let store = createStore(combinedReducers);
+console.log(store.getState());
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

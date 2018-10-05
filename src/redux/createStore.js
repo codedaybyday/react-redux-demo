@@ -10,8 +10,6 @@ function createStore(reducer) {
     let listeners = [];
     let dispatch = (action) => {
         state = reducer(state, action);
-        console.log(state);
-        console.log(listeners);
         listeners.forEach(fn => fn());
     };
     let subcribe = (fn) => {

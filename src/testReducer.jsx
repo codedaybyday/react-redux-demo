@@ -2,26 +2,25 @@ import React from 'react';
 import reactRedux from './react-redux';
 const {connect} = reactRedux;
 
-class Header extends React.Component {
+class TestReducer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
     render() {
-        console.log('header:', this.props);
-        const {theme} = this.props;
+        const {age} = this.props;
         return (
-            <div style={{color: theme}}>this is a header</div>
+            <div>测试anotherReducer->age:{age}</div>
         );
     }
 }
 function mapStateToProps(state) {
-    return state.reducer;
+    return state.anotherReducer;
 } 
 function mapDispatchToProps(dispatch) {
     return {
         dispatch
     };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(TestReducer);
